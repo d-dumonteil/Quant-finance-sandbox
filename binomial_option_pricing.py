@@ -9,13 +9,14 @@ def crr_params(S0, sigma, r, T, N):
     return dt,u,d,q,disc
 
 def terminal_prices(S0, u, d, N):
-    return 
+    j = np.arange(N + 1)
+    return S0*u**j*d**(N-j)
 
 def payoff_call(S, K):
-    return 
+    return np.maximum(S - K, 0)
 
 def payoff_put(S, K):
-    return 
+    return np.maximum(K - S, 0)
 
 def price_european(S0, K, sigma, r, T, N, payoff):
     return 
